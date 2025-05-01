@@ -94,6 +94,7 @@ signup.html: A sign-up form where users can join Grind Mode for updates.
 
 tutorials.html: Entails some workout demonstrations to help the athlete better their technique.
 
+login.html: A login form where members can join back Grind Mode.
 CSS File
 style.css: The main stylesheet that applies design and layout to the HTML elements. It contains:
 

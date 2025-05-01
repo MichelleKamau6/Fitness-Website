@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <title>🏋️‍♀️Grind Mode - Sign Up</title>
+  <title>🏋️‍♀️Grind Mode - Login</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -26,7 +26,7 @@
         <li><a href="tutorials.html">Tutorials</a></li>
         <li><a href="meals.html">Meal Plans</a></li>
         <li><a href="equipments.html">Equipments</a></li>
-        <li><a href="sign-up.html" class="active">Signing Up</a></li>
+        <li><a href="sign-up.html">Signing Up</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="login.html">Login</a></li>
       </ul>
@@ -38,16 +38,18 @@
   </header>
 
   <main class="auth-container">
-    <h2>Create Your Grind Mode Account</h2>
-    <form id="signup-form" class="auth-form">
-      <input type="text" id="signup-name" placeholder="Full Name" required />
-      <input type="email" id="signup-email" placeholder="Email Address" required />
-      <input type="password" id="signup-password" placeholder="Password" required />
-      <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required />
-      <button type="submit">Sign Up</button>
-      <p id="signup-message"></p>
+    <h2>Login to Grind Mode</h2>
+    <form id="login-form" class="auth-form" method="POST">
+        <label for="login-email">Email Address</label>    
+      <input type="email" id="login-email" placeholder="Email Address" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" placeholder="Password" required />
+      
+      <button type="submit">Log In</button>
+      <p id="login-message"></p>
     </form>
-    <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+    <p>Don't have an account? <a href="sign-up.html">Sign up here</a>.</p>
   </main>
 
   <footer class="site-footer">

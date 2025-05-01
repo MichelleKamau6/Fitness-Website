@@ -1,64 +1,79 @@
-// 1. Mobile Navigation Toggle
-const menuButton = document.querySelector('.menu');
-const navLinks = document.querySelector('.links');
+// script.js
 
-menuButton.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-// 2. Smooth Scroll for Anchor Links
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-anchorLinks.forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    targetElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+// ========== Mobile Menu Toggle ==========
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".menu");
+    const navLinks = document.querySelector(".links");
+  
+    if (menuIcon && navLinks) {
+      menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    }
+  
+    // ========== Auth Form Handling ==========
+    const signupForm = document.getElementById("signup-form");
+    const loginForm = document.getElementById("login-form");
+  
+    if (signupForm) {
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = signupForm.elements["username"].value.trim();
+        const password = signupForm.elements["password"].value.trim();
+        const message = document.getElementById("signup-message");
+  
+        if (username.length < 3 || password.length < 6) {
+          message.textContent = "Username must be at least 3 characters and password at least 6.";
+          return;
+        }
+  
+        // Simulated success
+        message.style.color = "green";
+        message.textContent = "Signup successful! You can now log in.";
+        signupForm.reset();
+      });
+    }
+  
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = loginForm.elements["username"].value.trim();
+        const password = loginForm.elements["password"].value.trim();
+        const message = document.getElementById("login-message");
+  
+        if (!username || !password) {
+          message.textContent = "Please fill in both fields.";
+          return;
+        }
+  
+        // Simulated login
+        message.style.color = "green";
+        message.textContent = "Login successful!";
+        loginForm.reset();
+      });
+    }
+  
+    // ========== Scroll Animation (Fade-in) ==========
+    const animatedElements = document.querySelectorAll(".fade-in");
+  
+    function handleScrollAnimation() {
+      animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("animate");
+        }
+      });
+    }
+  
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation();
+  
+    // ========== Highlight Active Page in Nav ==========
+    const links = document.querySelectorAll(".links a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.style.color = "#ff6b00";
+      }
     });
   });
-});
-
-// 3. Scroll Animations
-const elementsToAnimate = document.querySelectorAll('.fadeInUp');
-
-const animateOnScroll = () => {
-  elementsToAnimate.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (elementPosition < windowHeight - 150) {
-      element.classList.add('visible');
-    }
-  });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-animateOnScroll();  // Initial check in case content is already in view
-
-// 4. Basic Form Validation (for Sign Up Form)
-const signupForm = document.querySelector('.signup-form');
-const signupButton = document.querySelector('.signup-form button');
-
-signupButton.addEventListener('click', (event) => {
-  const formFields = signupForm.querySelectorAll('input');
-  let validForm = true;
-
-  formFields.forEach(field => {
-    if (field.value.trim() === "") {
-      field.style.borderColor = "red";
-      validForm = false;
-    } else {
-      field.style.borderColor = "#ccc";
-    }
-  });
-
-  if (!validForm) {
-    event.preventDefault();
-    alert("Please fill in all fields.");
-  }
-});
+  

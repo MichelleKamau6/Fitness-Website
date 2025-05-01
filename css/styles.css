@@ -66,6 +66,19 @@ nav {
 .small-buttons:hover {
   background-color: darkslategray;
 }
+.smaller-buttons{
+    padding: 0.4rem 0.9rem;
+    font-size: 0.875rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;   
+}
+.smaller-buttons:hover{
+background-color:darkslategray ;
+}
 
 @media (max-width: 768px) {
   .menu {
@@ -234,7 +247,7 @@ height: 1000px;
     color: rgb(235, 128, 41);
     letter-spacing: 5px;
     margin-bottom: 2rem;
-    font-style: 'Montserrat' , sans-serif ;
+    font-family: 'Montserrat' , sans-serif ;
 } 
 .word-1 {
     font-size: 2rem;
@@ -266,50 +279,94 @@ height: 1000px;
     height: 100%;
     border: none;
 }
-.background{
-    background-color:rgba(0, 0, 0, 0.719); 
+.background{ 
     color: #fff;
     font-family: 'Montserrat', sans-serif;
 }    
-.signup-section {
-    background-color: rgba(4, 30, 83, 0.817);
-    padding: 3rem 1rem;
+/* Auth (Signup & Login) Container */
+.auth-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: white;
-}  
-.signup-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.signup-form {
+    background-color: #1681a4b5;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Form Styling */
+  .auth-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
-} 
-.signup-form input {
-    padding: 0.75rem 1rem;
-    width: 90%;
-    max-width: 400px;
+  }
+  
+  .auth-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-form input:focus {
+    border-color: #00b7ff92;
+    outline: none;
+  }
+  
+  .auth-form button {
+    padding: 12px;
+    background-color: #ff7f50;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
-}  
-.signup-form button {
-    background-color: #9f4f09;
     color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}  
-.signup-form button:hover {
-    background-color: #cf711f;
-}
+  }
+  
+  .auth-form button:hover {
+    background-color: #ff5a00;
+  }
+  #signup-message {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Message Paragraph */
+  #login-message,
+  #signup-message {
+    color: #d10000;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Link under form */
+  .auth-container p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .auth-container a {
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+  
+
  /* About Us Section */
 .about-section {
     padding: 4rem 2rem;

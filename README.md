@@ -105,5 +105,3 @@ Copy
 Edit
 
 ---
-
-Let me know if you’d like this customized for deployment (e.g., Render/Netlify instructions or database integration).

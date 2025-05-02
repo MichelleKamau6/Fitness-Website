@@ -1,6 +1,3 @@
-
-
-
 # Grind Mode Fitness Website 💪
 
 **Grind Mode** is a fitness-themed website offering users a platform to learn about fitness, join bootcamps, connect with trainers, and track their workout progress. The site includes sign-up and login functionality, responsive design, and dynamic interaction using JavaScript.
@@ -110,16 +107,3 @@ Edit
 ---
 
 Let me know if you’d like this customized for deployment (e.g., Render/Netlify instructions or database integration).
-
-
-
-
-
-
-
-
-
-
-
-
-
